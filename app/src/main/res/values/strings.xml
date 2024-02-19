@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ApplicationPlage</string>
+    <string name="plus_d_informations">Plus d\'informations ...</string>
+    <string name="plage_de_la_palmyre">Plage de la Palmyre</string>
+    <string name="lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_cras_tincidunt_sem_quis_est_semper_facilisis_ut_volutpat_augue_vitae_ultrices_accumsan_morbi_in_dolor_mi_integer_eu_massa_suscipit_tempus_velit_sed_pellentesque_nisi_vivamus_et_tortor_ac_augue_mollis_accumsan_id_eget_mauris_ut_porttitor_libero_in_semper_fermentum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt sem quis est semper facilisis. Ut volutpat augue vitae ultrices accumsan. Morbi in dolor mi. Integer eu massa suscipit, tempus velit sed, pellentesque nisi. Vivamus et tortor ac augue mollis accumsan id eget mauris. Ut porttitor, libero in semper fermentum.</string>
+</resources>
