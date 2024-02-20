@@ -7,7 +7,7 @@
     tools:context=".DetailsActivity">
 
     <TextView
-        android:id="@+id/main_titre_plage"
+        android:id="@+id/TitrePlage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,24 +18,119 @@
         android:textStyle="bold"/>
 
     <TextView
-        android:id="@+id/main_description_plage"
+        android:id="@+id/DescriptionPlage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_cras_tincidunt_sem_quis_est_semper_facilisis_ut_volutpat_augue_vitae_ultrices_accumsan_morbi_in_dolor_mi_integer_eu_massa_suscipit_tempus_velit_sed_pellentesque_nisi_vivamus_et_tortor_ac_augue_mollis_accumsan_id_eget_mauris_ut_porttitor_libero_in_semper_fermentum"
+        android:text="@string/integer_eu_massa_suscipit_tempus_velit_sed_pellentesque_nisi_vivamus_et_tortor_ac_augue_mollis_accumsan_id_eget_mauris_ut_porttitor_libero_in_semper_fermentum"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/main_titre_plage"/>
+        app:layout_constraintTop_toBottomOf="@id/TitrePlage"
+        android:textAlignment="center"/>
 
 
     <TextView
+        android:id="@+id/lienPlage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/plus_d_informations"
+        android:text="@string/en_savoir_plus"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/main_description_plage"
-        android:textColor="@color/blue"/>
+        app:layout_constraintTop_toBottomOf="@id/DescriptionPlage"
+        android:textColor="@color/blue"
+        android:paddingTop="12dp"/>
+
+    <LinearLayout
+        android:id="@+id/details_size_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintTop_toBottomOf="@id/lienPlage">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/largeur"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:padding="16dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/_0_5km"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:padding="16dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/longueur"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:padding="16dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/_3_5km"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:padding="16dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/imagePlage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@id/details_size_ll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:src="@drawable/plage_de_la_palmyre"
+        android:scaleType="centerCrop"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:weightSum="2">
+        <Button
+            android:id="@+id/beachButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:text="@string/plages"
+            android:drawableBottom="@android:drawable/ic_dialog_info">
+
+        </Button>
+        <Button
+            android:id="@+id/mapButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:text="@string/carte"
+            android:drawableBottom="@android:drawable/ic_dialog_map">
+        </Button>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
