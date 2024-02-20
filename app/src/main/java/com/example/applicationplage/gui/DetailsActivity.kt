@@ -1,9 +1,10 @@
-package com.example.applicationplage
+package com.example.applicationplage.gui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.example.applicationplage.R
 import com.example.applicationplage.databinding.ActivityDetailsBinding
 
 class DetailsActivity : AppCompatActivity() {
@@ -22,7 +23,6 @@ class DetailsActivity : AppCompatActivity() {
                 getString(R.string.aller_vers_la_carte_des_plages),
                 Toast.LENGTH_SHORT).show()
             Log.d(TAG, "Aller vers les cartes")
-
 
             finish()
         }
