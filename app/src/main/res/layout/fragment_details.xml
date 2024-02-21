@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gui.DetailsActivity">
+    tools:context=".gui.NathanActivity">
 
     <TextView
         android:id="@+id/TitrePlage"
@@ -104,33 +104,5 @@
         android:src="@drawable/plage_de_la_palmyre"
         android:scaleType="centerCrop"
         />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:weightSum="2">
-        <Button
-            android:id="@+id/beachButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="10dp"
-            android:text="@string/plages"
-            android:drawableBottom="@android:drawable/ic_dialog_info">
-
-        </Button>
-        <Button
-            android:id="@+id/mapButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="10dp"
-            android:text="@string/carte"
-            android:drawableBottom="@android:drawable/ic_dialog_map">
-        </Button>
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

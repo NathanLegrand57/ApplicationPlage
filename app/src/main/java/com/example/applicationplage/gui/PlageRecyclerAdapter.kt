@@ -4,19 +4,22 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.CheckBox
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.applicationplage.R
 import com.example.applicationplage.databinding.PlageItemBinding
 import com.example.applicationplage.domain.Plage
 
-class PlageRecyclerAdapter(val lesPlages: List<Plage>, val favoris : MutableList<Boolean>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class PlageRecyclerAdapter(val lesPlages: List<Plage>, val favoris: MutableList<Boolean>) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    class PlageViewHolder (bd : PlageItemBinding) : RecyclerView.ViewHolder(bd.root) {
+    class PlageViewHolder(bd: PlageItemBinding) : RecyclerView.ViewHolder(bd.root) {
         val nom = bd.itemPlageNom
         val description = bd.itemPlageDescription
         val image = bd.itemPlageImage
-        val estFavori =  bd.itemFavori
+        val estFavori = bd.itemFavori
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.plage_item, parent, false)
         val bd = PlageItemBinding.bind(view)
@@ -41,8 +44,10 @@ class PlageRecyclerAdapter(val lesPlages: List<Plage>, val favoris : MutableList
 
         // Ajouter un listener sur le clic
         holder.itemView.setOnClickListener {
-            //val intent = Intent(holder.itemView.context, DetailsFragment::class.java)
-            //holder.itemView.context.startActivity(intent)
+            ListeFragmentDirections.actionListeFragmentToDetailsFragment(position)
+                .also {
+                    holder.itemView.findNavController().navigate(it)
+                }
         }
     }
 }
