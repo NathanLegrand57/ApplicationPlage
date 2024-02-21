@@ -2,19 +2,23 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="10dp">
 
     <ImageView
         android:id="@+id/item_plage_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/les_sables_d_olonnes" />
+        android:layout_height="150dp"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_vertical"
+        app:cardCornerRadius="10dp"
+        android:alpha="0.7">
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,16 +30,39 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="32sp"
-                android:text="Nom de la plage"/>
+                android:textAlignment="center"/>
 
             <TextView
                 android:id="@+id/itemPlageDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
-                android:text="@string/description_de_la_plage"/>
+                android:textAlignment="center"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+        <CheckBox
+            android:id="@+id/itemFavori"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:button="@drawable/favori_ou_non"
+            android:buttonTint="#FF0000"/>
+    <Button
+        android:id="@+id/beachButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/plages"
+        android:drawableBottom="@android:drawable/ic_dialog_info">
 
+    </Button>
+    <Button
+        android:id="@+id/mapButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/carte"
+        android:drawableBottom="@android:drawable/ic_dialog_map">
+    </Button>
 
 </FrameLayout>

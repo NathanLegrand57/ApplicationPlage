@@ -13,4 +13,6 @@
     <string name="aller_vers_plages">aller vers les plages</string>
     <string name="aller_vers_la_carte_des_plages">aller vers la carte des plages</string>
     <string name="description_de_la_plage">Description de la plage</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -13,10 +13,7 @@
         android:theme="@style/Theme.ApplicationPlage"
         tools:targetApi="31">
         <activity
-            android:name=".gui.DetailsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".gui.BeachListActivity"
+            android:name=".gui.NathanActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,4 +22,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
