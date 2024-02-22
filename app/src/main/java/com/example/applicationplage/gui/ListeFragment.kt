@@ -5,13 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.applicationplage.R
 import com.example.applicationplage.databinding.FragmentListeBinding
 import com.example.applicationplage.domain.Plage
+import com.example.applicationplage.presentation.PlageViewModel
 
 class ListeFragment : Fragment() {
+    private val viewModel : PlageViewModel by activityViewModels()
+
     private lateinit var binding : FragmentListeBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,12 +31,9 @@ class ListeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         // initialisation des données
         // Création des plages
-        val lesPlages = listOf(
-            Plage("La Palmyre Les Mathes", "La Palmyre est un quartier résidentiel et touristique", "plage_de_la_palmyre"),
-            Plage("Plage des Sables d'Olonne", "Les Sables d'Olonne est une ville située en Vendée", "plage_sables_d_olonne")
-        )
+
         val favoris = mutableListOf(false, false)
-        val adapter = PlageRecyclerAdapter (lesPlages, favoris)
+        val adapter = PlageRecyclerAdapter (viewModel.plages.value ?: listOf<Plage>(), favoris)
 
         binding.listePlages.adapter = adapter
         binding.listePlages.layoutManager = LinearLayoutManager(requireContext())

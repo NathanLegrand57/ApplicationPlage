@@ -9,6 +9,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.applicationplage.R
 import com.example.applicationplage.databinding.ActivityNathanBinding
+import org.osmdroid.config.Configuration
+import java.io.File
 
 class NathanActivity : AppCompatActivity() {
     private lateinit var binding : ActivityNathanBinding
@@ -25,9 +27,15 @@ class NathanActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
 
-
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+        val osmConf = Configuration.getInstance()
+        val basePath = File(getCacheDir().getAbsolutePath(), "osmdroid")
+        osmConf.osmdroidBasePath = basePath
+        val tileCache = File(osmConf.osmdroidBasePath.absolutePath, "tile")
+        osmConf.osmdroidTileCache = tileCache
+        osmConf.setUserAgentValue(packageName)
     }
 
         override fun onSupportNavigateUp(): Boolean {
