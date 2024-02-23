@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.setFragmentResultListener
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.applicationplage.R
 import com.example.applicationplage.databinding.FragmentListeBinding
@@ -37,5 +39,20 @@ class ListeFragment : Fragment() {
 
         binding.listePlages.adapter = adapter
         binding.listePlages.layoutManager = LinearLayoutManager(requireContext())
+
+        viewModel.plages.observe(viewLifecycleOwner) {
+            adapter.lesPlages = it
+            adapter.notifyDataSetChanged()
+        }
+
+        binding.allerVersCreation.setOnClickListener {
+            setFragmentResultListener("requestKey") { key, bundle ->
+                val plage = bundle.getParcelable<Plage>("plage")
+                viewModel.addPlage(plage!!)
+            }
+
+            val action = ListeFragmentDirections.actionListeFragmentToCreationFragment()
+            findNavController().navigate(action)
+        }
     }
 }

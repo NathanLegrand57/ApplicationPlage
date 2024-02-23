@@ -25,7 +25,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:weightSum="2">
+        android:weightSum="3">
         <Button
             android:id="@+id/beachButton"
             android:layout_width="0dp"
@@ -44,6 +44,15 @@
             android:layout_margin="10dp"
             android:text="@string/carte"
             android:drawableBottom="@android:drawable/ic_dialog_map">
+        </Button>
+        <Button
+            android:id="@+id/serviceButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:text="notification"
+            android:drawableBottom="@android:drawable/ic_dialog_alert">
         </Button>
     </LinearLayout>
 

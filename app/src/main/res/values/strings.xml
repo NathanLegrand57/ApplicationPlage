@@ -15,4 +15,15 @@
     <string name="description_de_la_plage">Description de la plage</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nom_de_la_plage">Nom de la plage</string>
+    <string name="image_de_la_plage">Image de la plage</string>
+    <string name="url_de_la_plage">URl de la plage</string>
+    <string name="longueur_de_la_plage">Longueur de la plage</string>
+    <string name="largeur_de_la_plage">Largeur de la plage</string>
+    <string name="latitude_de_la_plage">Latitude de la plage</string>
+    <string name="longitude_de_la_plage">Longitude de la plage</string>
+    <string name="create">Create</string>
+    <string name="enregistrer">Enregistrer</string>
+    <string name="ajout_d_une_plage">Ajout d\'une plage</string>
+    <string name="coucou">coucou</string>
 </resources>

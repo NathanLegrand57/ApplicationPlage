@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -41,6 +42,7 @@ android {
 
 dependencies {
 
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
     implementation ("org.osmdroid:osmdroid-android:6.1.10")
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
     implementation("androidx.core:core-ktx:1.12.0")

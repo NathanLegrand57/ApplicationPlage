@@ -10,7 +10,7 @@ import com.example.applicationplage.R
 import com.example.applicationplage.databinding.PlageItemBinding
 import com.example.applicationplage.domain.Plage
 
-class PlageRecyclerAdapter(val lesPlages: List<Plage>, val favoris: MutableList<Boolean>) :
+class PlageRecyclerAdapter(var lesPlages: List<Plage>, val favoris: MutableList<Boolean>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     class PlageViewHolder(bd: PlageItemBinding) : RecyclerView.ViewHolder(bd.root) {

@@ -54,7 +54,6 @@
         android:layout_margin="10dp"
         android:text="@string/plages"
         android:drawableBottom="@android:drawable/ic_dialog_info">
-
     </Button>
     <Button
         android:id="@+id/mapButton"
@@ -64,5 +63,4 @@
         android:text="@string/carte"
         android:drawableBottom="@android:drawable/ic_dialog_map">
     </Button>
-
 </FrameLayout>

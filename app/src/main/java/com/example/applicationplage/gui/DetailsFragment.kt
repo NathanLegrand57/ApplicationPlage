@@ -1,16 +1,23 @@
 package com.example.applicationplage.gui
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.setFragmentResultListener
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.applicationplage.R
 import com.example.applicationplage.databinding.FragmentDetailsBinding
 import com.example.applicationplage.databinding.FragmentListeBinding
+import com.example.applicationplage.domain.Plage
 import com.example.applicationplage.presentation.PlageViewModel
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.overlay.Marker
@@ -51,9 +58,15 @@ class DetailsFragment : Fragment() {
                 "drawable",
                 requireContext().packageName
             )
+            binding.lienPlage.text = "En savoir plus ..."
             binding.largeurPlage.text = plage.largeur.toString()
             binding.longueurPlage.text = plage.longueur.toString()
-            //binding.imagePlage.setImageResource(it)
+
+            binding.lienPlage.setOnClickListener {
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(plage.url))
+                startActivity(intent)
+            }
+
             val startPoint =
                 GeoPoint(plage.latitude, plage.longitude)
             binding.imageMapPlage.setUseDataConnection(true)
